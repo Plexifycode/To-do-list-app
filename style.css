@@ -8,10 +8,11 @@
 }
 
 body {
+  padding-top: 2em;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start;
+  min-height: 200vh;
   background: linear-gradient(135deg, #6247aa, #d972ff);
 }
 
@@ -19,6 +20,8 @@ body {
   display: flex;
   gap: 3em;
   flex-direction: column;
+  width: 500px;
+  position: relative;
 }
 
 .enter-task {
@@ -27,9 +30,9 @@ body {
   background-color: white;
   display: flex;
   justify-content: space-between;
-  gap: 4em;
+  gap: 1em;
   box-shadow: 6px 20px 9px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  width: 500px;
 }
 
 .enter-task input {
@@ -37,6 +40,7 @@ body {
   padding: 0.5em 1em;
   border-radius: 7px;
   border: 1px solid #d1d5e4;
+  width: 400px;
 }
 
 .enter-task button {
@@ -57,7 +61,8 @@ body {
   flex-direction: column;
   gap: 2em;
   box-shadow: 6px 20px 9px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  width: 500px;
+  display: none;
 }
 
 .task {
@@ -74,6 +79,7 @@ body {
 
 .task p {
   font-weight: 500;
+  cursor: pointer;
 }
 
 .task button {
@@ -84,4 +90,23 @@ body {
   cursor: pointer;
   background-color: #7c61c7;
   color: white;
+}
+
+p.task-checked {
+  text-decoration: line-through;
+  color: rgb(199, 181, 181);
+}
+
+.error {
+  font-size: 0.85rem;
+  color: #f9564f;
+  font-weight: 500;
+  display: none;
+  position: absolute;
+  top: 25px;
+  right: 115px;
+}
+
+.error.active {
+  display: inline;
 }
