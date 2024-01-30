@@ -46,11 +46,7 @@ addTaskBttn.addEventListener("click", () => {
         task.remove();
       });
 
-      if (tasksArr.length === 0) {
-        tasksContainer.style.display = "none";
-      } else {
-        tasksContainer.style.display = "flex";
-      }
+      
     });
 
     tasksArr.splice(0, 1);
