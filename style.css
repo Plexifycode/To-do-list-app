@@ -43,7 +43,7 @@ body {
   width: 400px;
 }
 
-.enter-task button {
+.enter-task .add {
   outline: 0;
   padding: 0.5em 1.5em;
   border-radius: 7px;
@@ -77,12 +77,18 @@ body {
   border-bottom: none;
 }
 
-.task p {
+.task .task-name {
   font-weight: 500;
+  font-size: 1.1rem;
+  outline: 0;
+  padding: 0.5em 1em;
+  border-radius: 7px;
+  border: none;
   cursor: pointer;
+  background-color: white;
 }
 
-.task button {
+.task .delete-button {
   outline: 0;
   padding: 0.5em 1em;
   border-radius: 7px;
@@ -92,7 +98,7 @@ body {
   color: white;
 }
 
-p.task-checked {
+.task-checked {
   text-decoration: line-through;
   color: rgb(199, 181, 181);
 }
