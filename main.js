@@ -9,7 +9,7 @@ function Task() {
   this.timeLine = null;
 }
 
-const toBeAdded = [];
+const currentTask = [];
 const tasksArr = [];
 
 addTaskBttn.addEventListener("click", () => {
@@ -18,37 +18,49 @@ addTaskBttn.addEventListener("click", () => {
   } else {
     errorMsg.classList.remove("active");
     const task = new Task();
-    toBeAdded.push(task);
+    currentTask.push(task);
     tasksArr.push(task);
-
     enterTaskInpt.value = "";
 
-    const taskName = toBeAdded[0].name;
-
+    const taskName = currentTask[0].name;
+    tasksContainer.style.display = "flex";
     tasksContainer.innerHTML += `<div class="task"> 
-            <p>${taskName}</p>
+            <button class="task-name">${taskName}</button>
     
-            <button>
-                <span class="material-symbols-outlined"> delete </span>
+            <button class="delete-button">
+                <span class="material-symbols-outlined "> delete </span>
             </button>
         </div>`;
 
-    tasksContainer.style.display = "flex";
+    currentTask.splice(0, 1);
 
-    document.querySelectorAll(".task").forEach((task) => {
-      const taskName = task.querySelector("p");
-      taskName.addEventListener("click", () => {
-        taskName.classList.toggle("task-checked");
+    const taskNameButton = tasksContainer.querySelectorAll(".task-name");
+
+    taskNameButton.forEach((nameButton) => {
+      nameButton.addEventListener("click", () => {
+        nameButton.classList.toggle("task-checked");
       });
-
-      const deleteTaskBttn = task.querySelector("button");
-      deleteTaskBttn.addEventListener("click", () => {
-        task.remove();
-      });
-
-      
     });
 
-    tasksArr.splice(0, 1);
+    const taskDeleteButton = tasksContainer.querySelectorAll(".delete-button");
+
+    taskDeleteButton.forEach((deleteButton) => {
+      deleteButton.addEventListener("click", () => {
+        const taskToBeRemoved = deleteButton.closest(".task");
+        taskToBeRemoved.remove();
+
+        const index = Array.from(tasksContainer.children).indexOf(
+          taskToBeRemoved
+        );
+
+        tasksArr.splice(index, 1);
+
+        if (tasksArr.length === 0) {
+          tasksContainer.style.display = "none";
+        } else {
+          tasksContainer.style.display = "flex";
+        }
+      });
+    });
   }
 });
