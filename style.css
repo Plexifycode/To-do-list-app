@@ -12,7 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-height: 200vh;
+  min-height: 100vh;
   background: linear-gradient(135deg, #6247aa, #d972ff);
 }
 
@@ -115,4 +115,30 @@ body {
 
 .error.active {
   display: inline;
+}
+
+@media only screen and (min-width: 350px) and (max-width: 480px) {
+  .container {
+    width: 320px;
+  }
+  .enter-task {
+    width: 320px;
+  }
+
+  .tasks-container {
+    width: 320px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 520px) {
+  .container {
+    width: 450px;
+  }
+  .enter-task {
+    width: 450px;
+  }
+
+  .tasks-container {
+    width: 450px;
+  }
 }
