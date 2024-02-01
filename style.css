@@ -117,16 +117,35 @@ body {
   display: inline;
 }
 
-@media only screen and (min-width: 350px) and (max-width: 480px) {
+@media only screen and (min-width: 200px) and (max-width: 359px) {
   .container {
-    width: 320px;
+    width: 250px;
   }
   .enter-task {
-    width: 320px;
+    width: 250px;
+    gap: 0.5em;
+    padding: 1em 0.75em;
+  }
+
+  .enter-task input {
+    width: 150px;
   }
 
   .tasks-container {
-    width: 320px;
+    width: 250px;
+  }
+}
+@media only screen and (min-width: 360px) and (max-width: 480px) {
+  .container {
+    width: 300px;
+  }
+  .enter-task {
+    width: 300px;
+    gap: 1em;
+  }
+
+  .tasks-container {
+    width: 300px;
   }
 }
 
