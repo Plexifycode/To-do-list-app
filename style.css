@@ -144,6 +144,10 @@ body {
     gap: 1em;
   }
 
+  .enter-task input {
+    width: 250px;
+  }
+
   .tasks-container {
     width: 300px;
   }
